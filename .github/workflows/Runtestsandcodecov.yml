@@ -37,5 +37,5 @@ jobs:
           files: cat coverage.xml
 
       - name: Fail the job when tests gets an error or fails
-        if: ${{ steps.pyTest.result == 'failure' }}
+        if: ${{ steps.pyTest.outcome == 'failure' }}
         run: exit 1
