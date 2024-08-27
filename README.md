@@ -5,4 +5,4 @@ SE Homework 1
 ![Static Badge](https://img.shields.io/badge/License-Mozilla_Public_License_2.0-green)
 ![Static Badge](https://img.shields.io/badge/Platform-Linux-red)
 [![Pytest](https://github.com/SE-Fall2024/SE-HW-1/actions/workflows/python-app.yml/badge.svg)](https://github.com/SE-Fall2024/SE-HW-1/actions/workflows/python-app.yml)
-[![codecov](https://codecov.io/github/SE-Fall2024/SE-HW-1/graph/badge.svg?token=58L5fMHfO3)](https://codecov.io/github/SE-Fall2024/SE-HW-1)
+[![codecov](https://codecov.io/gh/SE-Fall2024/SE-HW-1/graph/badge.svg?token=58L5fMHfO3)](https://codecov.io/gh/SE-Fall2024/SE-HW-1)
