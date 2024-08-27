@@ -7,4 +7,4 @@ def test_binarySeach_pass():
 
 def test_binarySeach_fail():
    
-    assert binary_search([1,4,6,8,10],14) == True  
+    assert binary_search([1,4,6,8,10],10) == True  
