@@ -28,16 +28,13 @@ jobs:
           pytest test_binarySearch.py --cov=. --cov-report=xml --cov-report=term
         continue-on-error: true  # Continue to the next step even if this one fails
 
-      - name: Upload coverage to Codecov
+      - name: Upload coverage to Codecov and Always display coverage report
+        if: always()
         uses: codecov/codecov-action@v4
         with:
-          files: ./coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Always display coverage report
-        if: always()
-        run: cat coverage.xml
+          files: cat coverage.xml
 
       - name: Fail the job when tests fail
-        if: ${{ needs.pytest.result == 'failure' }}
+        if: ${{ steps.pytest.result == 'failure' }}
         run: exit 1
