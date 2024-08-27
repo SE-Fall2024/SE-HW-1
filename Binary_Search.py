@@ -12,5 +12,5 @@ def binary_search(arr,n):
     return False
 
 arr,n=[1,2,3,4,5],6
-result=binary_seach(arr,n)
+result=binary_search(arr,n)
 print("The number {} is {} in the given array.".format(n, 'present' if result else 'not present'))
