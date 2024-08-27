@@ -1,4 +1,4 @@
-name: Pytest And Code Coverage
+name: Pytest status
 
 on: 
   push:
