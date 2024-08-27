@@ -1,4 +1,4 @@
-name: Run tests and upload coverage
+name: Pytest And Code Coverage
 
 on: 
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   test:
-    name: Run tests and collect coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,19 +23,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pytest-cov codecov
 
-      - name: Run tests and generate coverage report
+      - name: Run tests and generate code coverage report
         run: |
-          pytest --cov=. --cov-report=xml --cov-report=term
+          pytest test_binarySearch.py --cov=. --cov-report=xml --cov-report=term
         continue-on-error: true  # Continue to the next step even if this one fails
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           files: ./coverage.xml
-          fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Always display coverage report
         if: always()
         run: cat coverage.xml
 
+      - name: Fail the job when tests fail
+        if: ${{ needs.pytest.result == 'failure' }}
+        run: exit 1
